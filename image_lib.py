@@ -23,8 +23,8 @@ def compare_pixels(pixel1, pixel2, diff=5):
 
 
 def compare_cv2_middle_pixel(image1, image2):
-    width, height, _ = image1.shape
-    return compare_pixels(image1[width/2, height/2], image2[width/2, height/2])
+    width, height = image1.shape[:2]
+    return compare_pixels(image1[width/2, height/2], image2[image2.shape[0]/2, image2.shape[1]/2])
 
 
 def compare_cv2_images(image1, image2):

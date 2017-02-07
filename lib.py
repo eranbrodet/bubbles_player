@@ -1,3 +1,5 @@
+from collections import namedtuple
+
 import cv2
 
 GAME_TILES = {
@@ -139,7 +141,5 @@ class Line(object):
         except ZeroDivisionError:
             return 0
 
-
-class Point(object):
-    def __init__(self, x, y):
-        self.x, self.y = x,y
+Point = namedtuple("Point", ['x', 'y'])
+Bubble = namedtuple("Bubble", ['x', 'y', 'r'])
